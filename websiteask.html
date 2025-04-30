@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Throw Your Words</title>
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ask Your Question</h1>
+    <input type="text" id="questionInput" placeholder="Type your question here..." style="width: 300px; height: 30px; font-size: 16px;">
+    <br><br>
+    <button onclick="searchQuestion()" style="padding: 10px 20px; font-size: 16px;">Submit</button>
+
+    <div id="result"></div>
+
+    <br>
+    <a href="website1.html">Back to home</a>
+
+    <script>
+        // Example searchable data
+        const faqData = {
+            "what's your name": "I'm your digital buddy!",
+            "how much do you charge": "Depends on how annoying the request is 😄 my insta is adnankhan830",
+            "can you help me": "Sure, if you ask nicely! here's my insta adnankhan830 ",
+            "hello": "Hey there, adnankhan830"
+        };
+
+        function searchQuestion() {
+            const input = document.getElementById("questionInput").value.toLowerCase().trim();
+            const result = document.getElementById("result");
+
+            if (input in faqData) {
+                result.textContent = faqData[input];
+            } else {
+                result.textContent = "Sorry, I don't have an answer for that yet! u can message me on insta adnankhan830";
+            }
+        }
+    </script>
+</body>
+</html>
